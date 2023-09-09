@@ -1,0 +1,23 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "Namaste react learning",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k-rahul21/NamasteReactLearning.git"
+  },
+  "keywords": [],
+  "author": "Rahul khandelwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k-rahul21/NamasteReactLearning/issues"
+  },
+  "homepage": "https://github.com/k-rahul21/NamasteReactLearning#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
