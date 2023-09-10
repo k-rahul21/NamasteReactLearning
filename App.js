@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM  from "react-dom/client";
 /**
  * <div id="parent">
  *  <div id="child">
@@ -30,8 +32,8 @@
 
 // when we want to create nested element with siblings (eg. h1 and h2 are siblings) tag then below is the example code
 
-const heading1 = React.createElement('h1', {}, "I'm a h1 tag");
-const heading2 = React.createElement('h2', {}, "I'm a h2 tag")
+const heading1 = React.createElement('h1', {}, "I'm a heading 1 tag");
+const heading2 = React.createElement('h2', {}, "I'm a heading 2 tag")
 
 const parent2 = React.createElement(
   'div', {id: 'parent'}, React.createElement(
