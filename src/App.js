@@ -1,5 +1,5 @@
-import  React, { Children }  from "react";
-import  ReactDOM  from "react-dom/client";
+import React, { Children } from "react";
+import ReactDOM from "react-dom/client";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Body from "./components/Body/Body";
@@ -13,47 +13,46 @@ import RestrauntMenu from "./components/RestrauntMenu/RestrauntMenu";
 const AppLayout = () => {
   return (
     <>
-      <Header/>
-      <Outlet/>
-      <Footer/>
+      <Header />
+      <Outlet />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
 const appRoute = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout/>,
-    errorElement: <ErrorPage/>,
+    element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Body/>
+        element: <Body />,
       },
       {
         path: "/about",
-        element: <AboutUs/>
+        element: <AboutUs />,
       },
       {
         path: "/contact",
-        element: <ContactUs/>
+        element: <ContactUs />,
       },
       {
         path: "/cart",
-        element: <Cart/>
+        element: <Cart />,
       },
       {
         path: "/restraunt/:resId",
-        element: <RestrauntMenu/>
-      }
-    ]
+        element: <RestrauntMenu />,
+      },
+    ],
   },
 ]);
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // passing a react element inside the root
 
 //async defer
-root.render(<RouterProvider router={appRoute}/>);
+root.render(<RouterProvider router={appRoute} />);

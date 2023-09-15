@@ -4,7 +4,7 @@
   background-color: #333;
   align-items: center;
   justify-content: space-between;
-  // position: fixed; 
+  // position: fixed;
   // top: 0;
   // width: 100%;
   // right: 0;
@@ -14,6 +14,7 @@
   z-index: 999;
   padding: 0 10px;
   padding: 20px;
+  margin: 10px 0;
 }
 
 .header {
@@ -27,6 +28,4 @@
   .nav-items ul a {
     color: #fff;
   }
-
-
 }
