@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../../utils/constants";
+import RestrauntMenuHeader from "../RestrauntMenuHeader/RestrauntMenuHeader";
+import "./RestrauntMenu.scss";
 
 const RestrauntMenu = () => {
   const { resId } = useParams();
@@ -28,10 +30,9 @@ const RestrauntMenu = () => {
   console.log("res info", restaurantInfo);
 
   return (
-    <div>
-      <h3>RestrauntMenu id: {resId}</h3>
-      <h4>{restaurantInfo.name}</h4>
-      {/* <img src={IMG_CDN_URL + restaurantInfo.cloudinaryImageId}/> */}
+    <div className="restraunt-menu-container">
+      {/* <img src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId} /> */}
+      <RestrauntMenuHeader restaurantInfo={restaurantInfo} />
     </div>
   );
 };
