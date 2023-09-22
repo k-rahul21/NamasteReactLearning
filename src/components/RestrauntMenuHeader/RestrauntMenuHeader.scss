@@ -1,0 +1,47 @@
+.restraunt-menu-header-container {
+  .restraunt-name {
+    line-height: 1.2;
+    color: rgb(28, 28, 28);
+    margin: 0px;
+    font-weight: 500;
+    font-size: 3rem;
+  }
+
+  .restraunt-info {
+    .restraunt-cuisines {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: rgb(130, 130, 130);
+      margin-top: 0.5rem;
+    }
+
+    .restraunt-location {
+      text-decoration: none;
+      font-size: 1.3rem;
+      color: rgb(156, 156, 156);
+    }
+  }
+
+  .restraunt-time {
+    // color: rgb(244, 162, 102);
+    color: #d80032;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .delivery-review {
+    .avg-rating {
+      padding: 0px 15px;
+      background: forestgreen;
+      color: #fff;
+      border-radius: 0.5rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      height: max-content;
+    }
+
+    .review-desc {
+      color: rgb(156, 156, 156);
+    }
+  }
+}
