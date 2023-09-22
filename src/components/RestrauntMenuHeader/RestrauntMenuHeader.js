@@ -14,7 +14,7 @@ const RestrauntMenuHeader = ({
     cuisines,
     areaName,
     city,
-    availability,
+    isOpen,
     avgRating,
     totalRatings,
     totalRatingsString,
@@ -52,9 +52,9 @@ const RestrauntMenuHeader = ({
           )}
         </div>
       </div>
-      {availability && (
+      {isOpen && (
         <div className="restraunt-time mt-10">
-          {availability?.opened == true ? "Open now" : "Closed"}
+          {isOpen == true ? "Open now" : "Closed"}
         </div>
       )}
     </div>

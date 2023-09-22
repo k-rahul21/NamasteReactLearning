@@ -14,6 +14,10 @@
   justify-content: space-between;
 }
 
+.flex-gap-10 {
+  gap: 10px;
+}
+
 .align-center {
   align-items: center;
 }
@@ -26,6 +30,10 @@
   padding-right: 10px;
 }
 
+.p-10 {
+  padding: 10px;
+}
+
 .mr-5 {
   margin-right: 5px;
 }
@@ -34,10 +42,26 @@
   margin-right: 10px;
 }
 
+.mt-5 {
+  margin-top: 5px;
+}
+
 .mt-10 {
   margin-top: 10px;
 }
 
+.text-grey {
+  color: rgb(156, 156, 156);
+}
+
+.text-red {
+  color: #d80032;
+}
+
 .dotted-line {
   border: 1px dashed rgb(156, 156, 156);
+}
+
+.font-bold {
+  font-weight: bold;
 }
