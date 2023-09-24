@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useRestrauntsList from "../../utils/useRestrauntsList";
 import RestaurantCard from "../RestrauntCard/RestrauntCard";
 import SkeletonListing from "../Skeletonlisting/SkeletonListing";
 
@@ -12,9 +13,6 @@ const searchHandler = (searchText, restaurants) => {
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [restaurants, setRestaurants] = useState([]);
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  // console.log("render!!");
   const arrState = useState([{ name: "rahul" }]);
   // console.log("arr state", arrState);
   const resList = arrState[0];
@@ -22,50 +20,10 @@ const Body = () => {
   // console.log("res list", resList);
   // console.log(" set res list", setResList);
 
-  useEffect(() => {
-    getRestaurants();
-    // console.log("calling useEffect!");
-  }, []);
+  const [restaurants, filteredRestaurants] = useRestrauntsList();
 
-  // async function getRestaurants() {
-  //   await fetch(
-  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-  //   )
-  //     .then((response) => response.json())
-  //     .then(
-  //       (data) => (
-  //         setRestaurants(
-  //           data?.data?.cards[2]?.card.card.gridElements?.infoWithStyle
-  //             .restaurants
-  //         ),
-  //         setFilteredRestaurants(
-  //           data?.data?.cards[2]?.card.card.gridElements?.infoWithStyle
-  //             .restaurants
-  //         )
-  //       )
-  //     )
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }
-
-  const getRestaurants = async () => {
-    const fetchData = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
-    const JsonData = await fetchData.json();
-    setRestaurants(
-      JsonData?.data?.cards[2]?.card.card.gridElements?.infoWithStyle
-        .restaurants
-    ),
-      setFilteredRestaurants(
-        JsonData?.data?.cards[2]?.card.card.gridElements?.infoWithStyle
-          .restaurants
-      );
-  };
-
-  // console.log("restaurants", restaurants);
-  // console.log("filtered restaurants", filteredRestaurants);
+  console.log("restaurants", restaurants);
+  console.log("filtered restaurants", filteredRestaurants);
 
   if (!restaurants)
     return <div>No restaurants falls with your search text!!</div>;
