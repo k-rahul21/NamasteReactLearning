@@ -32,7 +32,7 @@ const appRoute = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <AboutUs />,
+        element: <AboutUs Title={"Class Based Component"} />,
       },
       {
         path: "/contact",

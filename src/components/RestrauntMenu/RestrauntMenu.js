@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IMG_CDN_URL } from "../../utils/constants";
+import { IMG_CDN_URL, MENU_API } from "../../utils/constants";
 import OngoingDiscountBanner from "../OngoingDiscountBanner/OngoingDiscountBanner";
 import RestrauntMenuHeader from "../RestrauntMenuHeader/RestrauntMenuHeader";
 import "./RestrauntMenu.scss";
@@ -15,11 +15,7 @@ const RestrauntMenu = () => {
   }, []);
 
   const getRestrauntMenu = async () => {
-    const restrauntInfo = await fetch(
-      " https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6298774&lng=77.1021305&restaurantId=" +
-        resId +
-        "&submitAction=ENTER"
-    );
+    const restrauntInfo = await fetch(MENU_API + resId + "&submitAction=ENTER");
     const response = await restrauntInfo.json();
     setRestrauntMenu(
       response?.data?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR
