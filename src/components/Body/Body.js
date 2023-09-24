@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useRestrauntsList from "../../utils/useRestrauntsList";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 import RestaurantCard from "../RestrauntCard/RestrauntCard";
 import SkeletonListing from "../Skeletonlisting/SkeletonListing";
 
@@ -21,9 +22,13 @@ const Body = () => {
   // console.log(" set res list", setResList);
 
   const [restaurants, filteredRestaurants] = useRestrauntsList();
+  const onlineStatus = useOnlineStatus();
 
   console.log("restaurants", restaurants);
   console.log("filtered restaurants", filteredRestaurants);
+
+  if (onlineStatus === false)
+    return <div>Oops, Seems like you're offline.</div>;
 
   if (!restaurants)
     return <div>No restaurants falls with your search text!!</div>;
