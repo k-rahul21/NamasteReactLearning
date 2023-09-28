@@ -12,14 +12,14 @@ const RestaurantCard = ({
   id,
 }) => {
   return (
-    <div className="restaurant-card">
+    <div className="restaurant-card w-52 p-3 cursor-pointer hover:shadow-lg rounded-md break-words  hover:shadow-slate-950">
       <img
-        className="restaurant-card-img"
+        className="rounded-md w-full"
         src={IMG_CDN_URL + cloudinaryImageId}
       />
-      <div className="product-name">{name}</div>
-      <div className="product-description">{cuisines.join(", ")}</div>
-      <div className="product-extra-info">
+      <div className="break-words text-slate-900 text-lg">{name}</div>
+      <div className=" mt-1 text-sm text-slate-600">{cuisines.join(", ")}</div>
+      <div className="flex justify-between items-center text-slate-600 mt-4 text-xs">
         {avgRating !== "--" && (
           <div className="product-rating">⭐{avgRating}</div>
         )}

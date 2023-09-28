@@ -39,10 +39,10 @@ const Body = () => {
     <SkeletonListing />
   ) : (
     <div className="body-section">
-      <div className="search-container">
+      <div className="flex gap-2">
         <input
           type="text"
-          className="search-input"
+          className="ml-5 focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-1/4 text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-5 ring-1 ring-slate-200 shadow-sm"
           placeholder="search"
           value={searchText}
           onChange={(e) => {
@@ -50,7 +50,7 @@ const Body = () => {
           }}
         />
         <button
-          className="search-btn text-14"
+          className="bg-black text-sm text-white px-5 py-2"
           onClick={() => {
             const data = searchHandler(searchText, restaurants);
             setFilteredRestaurants(data);
@@ -59,7 +59,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
+      <div className="flex flex-wrap gap-5 mt-5">
         {filteredRestaurants.length > 0 ? (
           filteredRestaurants.map((restaurant) => {
             return (
