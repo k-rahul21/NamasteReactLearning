@@ -12,7 +12,7 @@ const RestrauntMenu = () => {
   if (restaurantInfo === null) return <div>Nothing here to render.</div>;
 
   return (
-    <div className="restraunt-menu-container">
+    <div className="restraunt-menu-container ml-5 mr-2">
       {/* <img src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId} /> */}
       <RestrauntMenuHeader restaurantInfo={restaurantInfo} />
       <div className="dotted-line mt-10"></div>
