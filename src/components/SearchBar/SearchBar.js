@@ -1,21 +1,20 @@
 import { useState } from "react";
 
 const searchHandler = (searchText, restaurants) => {
-  console.log("from search", restaurants);
-  const filterData = restaurants.filter((restaurants) =>
-    restaurants?.data?.name.toLowerCase().includes(searchText)
+  const filterData = restaurants.filter((restaurant) =>
+    restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
   );
   return filterData;
 };
 
-const SearchBar = () => {
+const SearchBar = ({ restaurants, setFilteredRestaurants }) => {
   const [searchText, setSearchText] = useState("");
 
   return (
     <div className="flex gap-2">
       <input
         type="text"
-        className="mr-5 search-input focus:ring-2 focus:ring-blue-500"
+        className="ml-5 focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-1/4 text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-5 ring-1 ring-slate-200 shadow-sm"
         placeholder="search"
         value={searchText}
         onChange={(e) => {
@@ -23,10 +22,10 @@ const SearchBar = () => {
         }}
       />
       <button
-        className="bg-black text-sm "
+        className="bg-black text-sm text-white px-5 py-2"
         onClick={() => {
-          const data = searchHandler(searchText, restaurants);
-          setFilteredRestaurants(data);
+          const searchResult = searchHandler(searchText, restaurants);
+          setFilteredRestaurants(searchResult);
         }}
       >
         Search
