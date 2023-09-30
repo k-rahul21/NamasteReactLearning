@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useRestrauntsList from "../../utils/useRestrauntsList";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 import RestaurantCard from "../RestrauntCard/RestrauntCard";
 import SkeletonListing from "../Skeletonlisting/SkeletonListing";
 
@@ -12,9 +14,6 @@ const searchHandler = (searchText, restaurants) => {
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [restaurants, setRestaurants] = useState([]);
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  // console.log("render!!");
   const arrState = useState([{ name: "rahul" }]);
   // console.log("arr state", arrState);
   const resList = arrState[0];
@@ -22,50 +21,14 @@ const Body = () => {
   // console.log("res list", resList);
   // console.log(" set res list", setResList);
 
-  useEffect(() => {
-    getRestaurants();
-    // console.log("calling useEffect!");
-  }, []);
+  const [restaurants, filteredRestaurants] = useRestrauntsList();
+  const onlineStatus = useOnlineStatus();
 
-  // async function getRestaurants() {
-  //   await fetch(
-  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-  //   )
-  //     .then((response) => response.json())
-  //     .then(
-  //       (data) => (
-  //         setRestaurants(
-  //           data?.data?.cards[2]?.card.card.gridElements?.infoWithStyle
-  //             .restaurants
-  //         ),
-  //         setFilteredRestaurants(
-  //           data?.data?.cards[2]?.card.card.gridElements?.infoWithStyle
-  //             .restaurants
-  //         )
-  //       )
-  //     )
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }
+  console.log("restaurants", restaurants);
+  console.log("filtered restaurants", filteredRestaurants);
 
-  const getRestaurants = async () => {
-    const fetchData = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
-    const JsonData = await fetchData.json();
-    setRestaurants(
-      JsonData?.data?.cards[2]?.card.card.gridElements?.infoWithStyle
-        .restaurants
-    ),
-      setFilteredRestaurants(
-        JsonData?.data?.cards[2]?.card.card.gridElements?.infoWithStyle
-          .restaurants
-      );
-  };
-
-  // console.log("restaurants", restaurants);
-  // console.log("filtered restaurants", filteredRestaurants);
+  if (onlineStatus === false)
+    return <div>Oops, Seems like you're offline.</div>;
 
   if (!restaurants)
     return <div>No restaurants falls with your search text!!</div>;
@@ -76,10 +39,10 @@ const Body = () => {
     <SkeletonListing />
   ) : (
     <div className="body-section">
-      <div className="search-container">
+      <div className="flex gap-2">
         <input
           type="text"
-          className="search-input"
+          className="ml-5 focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-1/4 text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-5 ring-1 ring-slate-200 shadow-sm"
           placeholder="search"
           value={searchText}
           onChange={(e) => {
@@ -87,7 +50,7 @@ const Body = () => {
           }}
         />
         <button
-          className="search-btn text-14"
+          className="bg-black text-sm text-white px-5 py-2"
           onClick={() => {
             const data = searchHandler(searchText, restaurants);
             setFilteredRestaurants(data);
@@ -96,7 +59,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
+      <div className="flex flex-wrap gap-5 mt-5">
         {filteredRestaurants.length > 0 ? (
           filteredRestaurants.map((restaurant) => {
             return (

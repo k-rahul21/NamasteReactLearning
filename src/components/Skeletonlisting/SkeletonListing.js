@@ -1,10 +1,9 @@
 import CardSkeleton from "../CardSkeleton/CardSkeleton";
-import "./SkeletonListing.scss";
 
 const SkeletonListing = () => {
   return (
-    <div className="skeleton-container">
-      {Array(12)
+    <div className="flex flex-wrap mt-5 gap-5">
+      {Array(15)
         .fill(0)
         .map((e, index) => (
           <CardSkeleton key={index} />

@@ -3,35 +3,34 @@
   overflow-wrap: break-word;
   cursor: pointer;
   padding: 10px;
-  border: 1px solid #EEEEEE
+  border: 1px solid #eeeeee;
 }
 
 .shine {
   background: #f6f7f8;
-  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
   background-repeat: no-repeat;
-  background-size: 800px 104px; 
+  background-size: 800px 104px;
   display: inline-block;
-  position: relative; 
-  
+  position: relative;
+
   -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards; 
+  -webkit-animation-fill-mode: forwards;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-name: placeholderShimmer;
   -webkit-animation-timing-function: linear;
-  }
-
-// .group-lines {
-//   display: inline-flex;
-//   flex-direction: column; 
-//   margin-top: 15px;
-//   vertical-align: top; 
-// }
+}
 
 .lines {
   height: 15px;
   margin-top: 10px;
-  width: 90%; 
+  width: 90%;
 }
 
 .horizontal-line {
@@ -39,9 +38,9 @@
 }
 
 .photo {
-  display: block!important;
-  width: 90%; 
-  height: 120px; 
+  display: block !important;
+  width: 90%;
+  height: 120px;
   margin-top: 15px;
 }
 
@@ -49,8 +48,8 @@
   0% {
     background-position: -468px 0;
   }
-  
+
   100% {
-    background-position: 468px 0; 
+    background-position: 468px 0;
   }
 }
