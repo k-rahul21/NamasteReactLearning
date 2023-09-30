@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import useRestrauntsList from "../../utils/useRestrauntsList";
 import useOnlineStatus from "../../utils/useOnlineStatus";
-import RestaurantCard from "../RestrauntCard/RestrauntCard";
+import RestaurantCard, {
+  withPromotedLabel,
+} from "../RestrauntCard/RestrauntCard";
 import SkeletonListing from "../Skeletonlisting/SkeletonListing";
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -9,6 +11,8 @@ const Body = () => {
   const [restaurants, filteredRestaurants, setFilteredRestaurants] =
     useRestrauntsList();
   const onlineStatus = useOnlineStatus();
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   console.log("restaurants", restaurants);
   console.log("filtered restaurants", filteredRestaurants);
@@ -37,7 +41,11 @@ const Body = () => {
                 to={"/restraunt/" + restaurant.info.id}
                 key={restaurant.info.id}
               >
-                <RestaurantCard {...restaurant.info} />
+                {restaurant.info?.isPromoted ? (
+                  <RestaurantCardPromoted {...restaurant.info} />
+                ) : (
+                  <RestaurantCard {...restaurant.info} />
+                )}
               </Link>
             );
           })
