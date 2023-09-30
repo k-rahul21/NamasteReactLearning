@@ -26,3 +26,6 @@ All these are just fancy names of code splitting
 // Lazy Loading
 // On Demand Loading
 // Dynamic Import
+
+Higher order component
+A higher order component is a function that takes a component and then enchance that component returns back . like example we use modal in sita
