@@ -15,7 +15,7 @@ const RestrauntMenu = () => {
     <div className="restraunt-menu-container ml-5 mr-2">
       {/* <img src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId} /> */}
       <RestrauntMenuHeader restaurantInfo={restaurantInfo} />
-      <div className="dotted-line mt-10"></div>
+      <div className="dotted-line mt-2"></div>
       <OngoingDiscountBanner restaurantInfo={restaurantInfo} />
     </div>
   );
