@@ -29,3 +29,8 @@ All these are just fancy names of code splitting
 
 Higher order component
 A higher order component is a function that takes a component and then enchance that component returns back . like example we use modal in sita
+
+Controlled and Uncontrolled component
+
+- Controlled component refers to those components that have their state and behaviour controlled by their parent componet.
+- Uncontrolled component - A React component where the value of a form element is not directly controlled by React but is managed by the DOM itself.
