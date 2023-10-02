@@ -1,5 +1,4 @@
 import React from "react";
-import "./RestrauntMenuHeader.scss";
 
 const convertNumIntoString = (number) => {
   let numberStr = number?.toString();
@@ -22,17 +21,21 @@ const RestrauntMenuHeader = ({
 }) => {
   return (
     <div className="restraunt-menu-header-container">
-      <div className="restraunt-main-info flex flex-row flex-space-btw align-center">
-        <h1 className="restraunt-name">{name}</h1>
-        <section className="restraunt-review-section pr-10">
+      <div className="flex flex-row justify-between align-center">
+        <h1 className="text-black text-3xl font-bold">{name}</h1>
+        <section className="pr-3">
           {avgRating && (
-            <div className="delivery-review flex align-center">
-              <div className="avg-rating mr-5">{avgRating}</div>
+            <div className="flex align-center">
+              <div className="mr-1 text-white text-sm font-bold px-3 py-2 rounded-md h-max bg-[#228b22]">
+                {avgRating}
+              </div>
               <div className="flex flex-col">
-                <div className="review-in-num">
+                <div className="text-sm">
                   {convertNumIntoString(totalRatings)}
                 </div>
-                <div className="review-desc">Delivery Reviews</div>
+                <div className="text-xs text-custom-light-gray">
+                  Delivery Reviews
+                </div>
                 <div className="dotted-line"></div>
               </div>
             </div>
@@ -40,20 +43,24 @@ const RestrauntMenuHeader = ({
         </section>
       </div>
 
-      <div className="restraunt-info">
-        <div className="restraunt-cuisines">{cuisines?.join(", ")}</div>
-        <div className="restraunt-location flex flex-row">
-          <div>{areaName}</div>
-          {city && (
+      <div>
+        <div className="text-lg mt-1 text-custom-dark-gray ">
+          {cuisines?.join(", ")}
+        </div>
+        <div className="text-md flex flex-row text-custom-light-gray">
+          {areaName && (
             <>
-              <div>,</div>
-              <div className="pl-5">{city}</div>
+              <div className="flex">
+                {areaName}
+                {city && ","}
+                {city && <div className="pl-1">{city}</div>}
+              </div>
             </>
           )}
         </div>
       </div>
       {isOpen && (
-        <div className="restraunt-time mt-10">
+        <div className="mt-1 text-red-500 text-base">
           {isOpen == true ? "Open now" : "Closed"}
         </div>
       )}

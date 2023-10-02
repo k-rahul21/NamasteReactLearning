@@ -9,15 +9,25 @@ const useRestrauntMenu = (resId) => {
     getRestrauntMenu();
   }, []);
 
+  const getRestrauntCategory = (data) => {
+    console.log("Dataaa", data);
+    return data?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (category) =>
+        category?.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  };
+
   const getRestrauntMenu = async () => {
     const response = await fetch(MENU_API + resId + "&submitAction=ENTER");
     const jsonResponse = await response.json();
+    console.log("response", jsonResponse);
     setRestrauntInfo(jsonResponse?.data?.cards?.[0]?.card?.card?.info);
-    setRestrauntMenu(
-      response?.data?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR
-    );
+    const categories = getRestrauntCategory(jsonResponse?.data?.cards[2]);
+    console.log("category", categories);
+    setRestrauntMenu(categories);
   };
-  return restaurantInfo;
+  return [restaurantInfo, restrauntMenu];
 };
 
 export default useRestrauntMenu;
