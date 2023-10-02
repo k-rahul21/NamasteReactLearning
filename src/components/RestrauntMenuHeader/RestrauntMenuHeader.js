@@ -22,7 +22,7 @@ const RestrauntMenuHeader = ({
   return (
     <div className="restraunt-menu-header-container">
       <div className="flex flex-row justify-between align-center">
-        <h1 className="text-black text-3xl text-normal">{name}</h1>
+        <h1 className="text-black text-3xl font-bold">{name}</h1>
         <section className="pr-3">
           {avgRating && (
             <div className="flex align-center">

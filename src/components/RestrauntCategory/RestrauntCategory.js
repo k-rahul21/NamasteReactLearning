@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import ItemList from "../ItemList/ItemList";
 
-const RestrauntCategory = ({ menu }) => {
-  const [showItems, setShowItems] = useState(false);
-
+const RestrauntCategory = ({ menu, showItems, setShowItems }) => {
   const handleClick = () => {
-    setShowItems(!showItems);
+    setShowItems();
   };
-
   return (
     <div>
       <div className="w-full border border-custom-black p-4 shadow-lg my-4">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useRestrauntMenu from "../../utils/useRestrauntMenu";
 import OngoingDiscountBanner from "../OngoingDiscountBanner/OngoingDiscountBanner";
@@ -8,20 +8,25 @@ import "./RestrauntMenu.scss";
 
 const RestrauntMenu = () => {
   const { resId } = useParams();
+  const [showItems, setShowItems] = useState("");
   const [restaurantInfo, restrauntMenu] = useRestrauntMenu(resId);
-  console.log("restaurant info", restrauntMenu);
 
   if (restaurantInfo === null) return <div>Nothing here to render.</div>;
 
   return (
-    <div className="restraunt-menu-container ml-5 mr-2">
+    <div className="restraunt-menu-container w-7/12 m-auto">
       {/* <img src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId} /> */}
       <RestrauntMenuHeader restaurantInfo={restaurantInfo} />
       <div className="dotted-line mt-2"></div>
       <OngoingDiscountBanner restaurantInfo={restaurantInfo} />
       <div className="dotted-line mt-2"></div>
-      {restrauntMenu.map((menu) => (
-        <RestrauntCategory menu={menu.card.card} key={menu.card.card.title} />
+      {restrauntMenu.map((menu, index) => (
+        <RestrauntCategory
+          menu={menu.card.card}
+          key={menu.card.card.title}
+          showItems={index === showItems}
+          setShowItems={() => setShowItems(index)}
+        />
       ))}
     </div>
   );
