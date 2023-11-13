@@ -3,7 +3,7 @@ import empty_cart from "../../assets/img/empty_cart.webp";
 
 const Cart = () => {
   return (
-    <div className="empty-container flex justify-center items-center w-full h-80 m-auto">
+    <div className="empty-container flex justify-center items-center w-full mb-36">
       <img className="empty-image" src={empty_cart} />
       <div className="p-5">
         <h3 className="mb-5">Your Cart is empty!</h3>
