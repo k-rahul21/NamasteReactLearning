@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   const cartItems = useSelector((store) => store.cart.items);
-  console.log("Cartitems", cartItems);
 
   return (
     <div className="header flex overflow-hidden items-center justify-between fixed sticky top-0 z-50 my-3 p-5">
