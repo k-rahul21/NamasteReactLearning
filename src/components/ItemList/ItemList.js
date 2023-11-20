@@ -25,7 +25,7 @@ const ItemList = ({ item }) => {
               className={`text-custom-light-gray mt-2 
                `}
             >
-              {item.card.info.description}.
+              {item.card.info.description}
             </div>
           </div>
           <div>
