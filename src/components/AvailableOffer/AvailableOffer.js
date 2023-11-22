@@ -6,7 +6,7 @@ const AvailableOffer = () => {
   const [showOfferList, setShowOfferList] = useState(false);
 
   return (
-    <div className="border-y-2 py-3 px-8">
+    <div className="border-b-2 py-3 px-8 mx-4">
       <h1 className="text-lg pb-2">Available Offer 💰</h1>
       <ul className="text-custom-light-gray leading-6 list-disc">
         {showOfferList ? (
