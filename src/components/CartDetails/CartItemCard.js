@@ -10,7 +10,7 @@ const CartItemCard = ({ cartItem }) => {
     dispatch(removeItems(item));
   };
   return (
-    <div className="my-2 pl-8 pr-3 py-3 border-2 border-custom-light-gray rounded flex flex-row justify-between">
+    <div className="my-2 pl-8 pr-3 py-3 border-2  drop-shadow-lg hover:drop-shadow-xl rounded flex flex-row justify-between">
       <div className="flex flex-col gap-1">
         <div>{cartItem?.name}</div>
         <div className="text-sm text-custom-dark-gray">
