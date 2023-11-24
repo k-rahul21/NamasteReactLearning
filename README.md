@@ -34,3 +34,17 @@ Controlled and Uncontrolled component
 
 - Controlled component refers to those components that have their state and behaviour controlled by their parent componet.
 - Uncontrolled component - A React component where the value of a form element is not directly controlled by React but is managed by the DOM itself.
+
+# Two types of Routing in web apps
+
+- Client Side Routing
+- Server Side Routing
+
+# Redux Toolkit (RTK)
+
+- Install @reduxjs/toolkit and react-redux
+- Build out store
+- Connect out store to our app
+- Slice (cartSlice)
+- dispatch(action)
+- selector

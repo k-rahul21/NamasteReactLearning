@@ -9,13 +9,17 @@ import ContactUs from "./components/ContactUs/ContactUs";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import RestrauntMenu from "./components/RestrauntMenu/RestrauntMenu";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const AppLayout = () => {
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <Provider store={appStore}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </Provider>
     </>
   );
 };
