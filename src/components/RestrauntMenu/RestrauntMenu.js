@@ -4,6 +4,7 @@ import useRestrauntMenu from "../../utils/useRestrauntMenu";
 import OngoingDiscountBanner from "../OngoingDiscountBanner/OngoingDiscountBanner";
 import RestrauntCategory from "../RestrauntCategory/RestrauntCategory";
 import RestrauntMenuHeader from "../RestrauntMenuHeader/RestrauntMenuHeader";
+import RestrauntPageSkeleton from "../RestrauntPageSkeleton/RestrauntPageSkeleton";
 import "./RestrauntMenu.scss";
 
 const RestrauntMenu = () => {
@@ -11,11 +12,10 @@ const RestrauntMenu = () => {
   const [showItems, setShowItems] = useState("");
   const [restaurantInfo, restrauntMenu] = useRestrauntMenu(resId);
 
-  if (restaurantInfo === null) return <div>Nothing here to render.</div>;
+  if (!restaurantInfo) return <RestrauntPageSkeleton />;
 
   return (
     <div className="restraunt-menu-container w-7/12 m-auto">
-      {/* <img src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId} /> */}
       <RestrauntMenuHeader restaurantInfo={restaurantInfo} />
       <div className="dotted-line mt-2"></div>
       <OngoingDiscountBanner restaurantInfo={restaurantInfo} />
