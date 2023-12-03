@@ -13,11 +13,11 @@ const useRestrauntsList = () => {
     const response = await fetch(RESTRAUNT_LIST);
     const jsonResponse = await response.json();
     setRestaurants(
-      jsonResponse?.data?.cards[2]?.card.card.gridElements?.infoWithStyle
+      jsonResponse?.data?.cards[5]?.card.card.gridElements?.infoWithStyle
         .restaurants
     ),
       setFilteredRestaurants(
-        jsonResponse?.data?.cards[2]?.card.card.gridElements?.infoWithStyle
+        jsonResponse?.data?.cards[5]?.card.card.gridElements?.infoWithStyle
           .restaurants
       );
   };
