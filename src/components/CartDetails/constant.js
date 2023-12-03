@@ -1,22 +1,27 @@
 export const pricebreakdownCol = [
   {
-    title: "Item Total",
-    value: 500,
+    title: "Sub Total",
+    value: 0,
+    action: "",
   },
   {
     title: "Coupon Discount",
-    value: 50,
-  },
-  {
-    title: "Platform Fee",
     value: 20,
+    action: "percentage",
   },
   {
     title: "Delivery Charges",
-    value: 40,
+    value: 50,
+    action: "absolute",
   },
   {
     title: "Tax and Charges",
-    value: 48,
+    value: 39,
+    action: "absolute",
+  },
+  {
+    title: "Platform Fee",
+    value: 25,
+    action: "absolute",
   },
 ];
