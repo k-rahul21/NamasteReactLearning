@@ -64,3 +64,5 @@ Controlled and Uncontrolled component
 - Configure Parcel Config file to disable default babel transpilation
 - Do Jest configuration by using npx jest --init
 - Install JSDOM library by using npm install --save-dev jest-environment-jsdom
+- Install @babel/preset-react library to make JSX work in test cases
+- Install @testing-library/jest-dom
