@@ -21,12 +21,6 @@ const Header = () => {
               {onlineStatus ? <Wifi /> : <WifiOff />}
             </li>
           </Link>
-          {/* <Link to="/about">
-            <li>About</li>
-          </Link> */}
-          {/* <Link to="/contact">
-            <li>Contact</li>
-          </Link> */}
           <Link to="/cart">
             <li className="text-white flex flex-row">
               <ShoppingCart />
