@@ -1,4 +1,4 @@
-import { sum } from "../components/AboutUs/Sum";
+import { sum } from "../components/Temp/Sum";
 
 test("sum function should calculate the sum of two number", () => {
   // Querying
