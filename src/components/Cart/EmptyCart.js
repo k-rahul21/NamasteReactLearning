@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import emptyCartImg from "../../assets/img/emptyCart.webp";
+import emptyCartImg from "../../assets/img/emptyCartImg.webp";
 
 const EmptyCart = () => {
   return (
