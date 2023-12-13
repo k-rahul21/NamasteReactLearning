@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import empty_cart from "../../assets/img/empty_cart.webp";
+import emptyCartImg from "../../assets/img/emptyCart.webp";
 
 const EmptyCart = () => {
   return (
     <div className="empty-container flex justify-center items-center w-full mb-36">
-      <img className="empty-image" src={empty_cart} />
+      <img className="empty-image" src={emptyCartImg} />
       <div className="p-5">
         <h3 className="mb-5">Your Cart is empty!</h3>
         <p className="leading-normal">
