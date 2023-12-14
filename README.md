@@ -48,3 +48,21 @@ Controlled and Uncontrolled component
 - Slice (cartSlice)
 - dispatch(action)
 - selector
+
+# Types of testing (which developer can do)
+
+- Unit Testing
+- Integration Testing
+- End to End Testing (e2e testing)
+
+# Setting up Testing in our app
+
+- Install React Testing Library
+- Install jest
+- Install Babel dependencies
+- Configure Babel
+- Configure Parcel Config file to disable default babel transpilation
+- Do Jest configuration by using npx jest --init
+- Install JSDOM library by using npm install --save-dev jest-environment-jsdom
+- Install @babel/preset-react library to make JSX work in test cases
+- Install @testing-library/jest-dom
