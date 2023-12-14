@@ -1,5 +1,4 @@
 import { IMG_CDN_URL } from "../../utils/constants";
-import "./RestaurantCard.scss";
 
 const RestaurantCard = ({
   avgRating,
@@ -28,7 +27,6 @@ const RestaurantCard = ({
       </div>
       {aggregatedDiscountInfo?.descriptionList?.[0].meta && (
         <>
-          {/* <div className="horizontal-line"></div> */}
           <div className="product-ongoing-offer">
             {aggregatedDiscountInfo?.descriptionList?.[0].meta}
           </div>

@@ -36,6 +36,7 @@ const Body = () => {
       <div className="flex flex-wrap gap-5 mt-5">
         {filteredRestaurants.length > 0 ? (
           filteredRestaurants.map((restaurant) => {
+            console.log("restaurant", restaurant);
             return (
               <Link
                 to={"/restraunt/" + restaurant.info.id}

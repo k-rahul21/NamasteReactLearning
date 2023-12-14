@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <div className="header flex overflow-hidden items-center justify-between fixed sticky top-0 z-50 my-3 p-5">
       <Title />
-      {/* <SearchBar/> */}
+      {/* <SearchBar /> */}
       <div className="nav-items">
         <ul className="flex w-36 justify-between mr-3 ">
           <Link className="mx-1">
